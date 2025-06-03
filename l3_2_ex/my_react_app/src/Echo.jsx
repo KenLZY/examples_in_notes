@@ -14,6 +14,9 @@ function NewMessageBar({message, onMessageChange, onSubmitClick}) {
 }
 
 function MessageList({messages}) {
+    /*
+    * Takes in a bunch of messages and turns them into a table
+    */
     let rows = [];
     for (let i in messages) {
         rows.push(
