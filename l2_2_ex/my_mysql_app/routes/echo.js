@@ -15,12 +15,14 @@ router.get('/:msg', async function(req, res, next) {
 */
 
 
-/* for approach 1
+// for approach 1
+// listening on /echo/
 router.get('/', async function(req, res, next) {
     const messages = await model.all();
     res.render(`echoform`, { 'title': "Echo App",'messages': messages});
 });
 
+// listening on /echo/submit
 router.post('/submit', async function(req, res, next) {
     const msg = req.body.message;
     const message = new model.Message(msg, new Date());
@@ -28,7 +30,6 @@ router.post('/submit', async function(req, res, next) {
     const messages = await model.all();
     res.render(`echoform`, { 'title': "Echo App", 'messages': messages});
 });
-*/
 
 
 router.get('/', async function(req, res, next) {
